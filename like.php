@@ -1,0 +1,1 @@
+<?php require "auth.php"; $id=(int)($_GET["id"]??0); if($id&&$id!=$me){$s=$pdo->prepare("INSERT IGNORE INTO likes(liker_id,liked_id) VALUES(?,?)");$s->execute([$me,$id]);} header("Location: dashboard.php");exit;?>
